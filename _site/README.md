@@ -1,13 +1,11 @@
-# Building interactive data applications with R Shiny
+## Repo for ELAG 2018 workshop on R Shiny - Interactive Data Applications
 
+Website: <https://ucla-data-archive.github.io/elag2018-shiny/>
 Instructors: Harrison Dekker and Tim Dennis  
+[Setup info](setup-r.md)
 
-Schedule: 
+## Adding content to this repo
 
-### Morning 10-noon 
-
-1. [Getting Setup and Configured (Prior to workshop is preferred)](setup-r.md)
-2. Shiny Demos 
-1. [R and RStudio](http://moderndive.com/2-getting-started.html) -  
-3. DataViz and GGPLOT2 in R 
-4. 
+* Add a file to the `pages/` folder - using `.md` extension
+* You can link to it off the `index.md` file like so:
+  - `[Text](pages/file.html)` use `.html` extension to the above `md` file

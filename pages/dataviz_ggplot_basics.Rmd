@@ -9,7 +9,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache=TRUE)
-source("tools/chunk-options.R")
+source("../tools/chunk-options.R")
 opts_chunk$set(fig.path = "fig/08-plot-ggplot2-")
 library(readr)
 # Silently load in the data so the rest of the lesson works
@@ -44,7 +44,7 @@ GOALS: Students should be able to use ggplot2 to generate publication quality gr
 
 ## Think in terms of variable types
 
-![Viz](http://moderndive.com/images/coggleviz.png)
+<img src="http://moderndive.com/images/coggleviz.png" width="600" />
 
 ## Organizing your project space
 
@@ -76,6 +76,7 @@ data()
 ```
 
 ```{r add-package-data}
+#install.packages(openintro)
 library(openintro)
 data()
 ```
@@ -91,7 +92,7 @@ head(diamonds)
 * Note: these are loaded into the R session but aren't saved as a file on our file system. 
 * If you want to open one of these as a `csv` you can write it out using the `write_csv`
 
-```{r write-csv}
+```{r write-csv, eval=FALSE, include=FALSE}
 write_csv(diamonds, 'data/diamonds.csv')
 ```
 
@@ -107,22 +108,6 @@ write_csv(diamonds, 'data/diamonds.csv')
 #download.file(url, path/filename)
 download.file("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv", 'data/gapminder-FiveYearData.csv')
 ```
-
-#### Read the data into R
-
-* There's a family of `read` functions that read data in as a data frame
-
-```{r read-data}
-read_csv('data/gapminder-FiveYearData.csv')
-```
-
-* read_csv by itself will print out the data frame
-* we need to save it as an object in R to reuse it
-
-```{r read-data-as-obj}
-gapminder <- read_csv('data/gapminder-FiveYearData.csv')
-```
-
 
 ## First Plots with GGPLOT
 
@@ -200,7 +185,7 @@ ggplot(d2, aes(carat, price, color = color)) + geom_point() + theme_gray()
 library(readr)  #from tidyverse
 #download.file("https://goo.gl/BtBnPg", 'data/gapminder-FiveYearData.csv')
 #gapminder <- read.csv("https://goo.gl/BtBnPg")
-gapminder <- read_csv('data/gapminder-FiveYearData.csv')
+gapminder <- gapminder::gapminder
 ```
 
 ```{r gap-scatter}
@@ -278,14 +263,15 @@ h + geom_histogram(binwidth = 8, fill = "steelblue", colour = "black")
 
 ```{r download-cli-data, eval=FALSE}
 #download.file('https://raw.github.com/karthikram/ggplot-lecture/master/climate.csv', 'data/climate.csv')
-#climate <- read.csv(text=RCurl::getURL(https://raw.github.com/karthikram/ggplot-lecture/master/climate.csv))
+#climate <- read.csv(text=RCurl::getURL("https://raw.github.com/karthikram/ggplot-lecture/master/climate.csv"))
 ```
 
 * In the climate data set, `Anomaly10y` is a 10-year running average of the deviation (in Celsius) from the average 1950–1980 temperature:
 
 
 ```{r line-plots}
-climate <- read_csv("data/climate.csv")
+#climate <- read_csv("data/climate.csv")
+climate <- read_csv("https://raw.github.com/karthikram/ggplot-lecture/master/climate.csv")
 ggplot(climate, aes(Year, Anomaly10y)) +
   geom_line()
 ```
@@ -419,7 +405,7 @@ ggplot(d2, aes(clarity, fill = cut)) +
 * HINT: Look up `ifelse` function to create `clim$sign`
 
 ```{r cli-anomal10}
-clim <- read.csv('data/climate.csv', header = TRUE)
+clim <- read_csv("https://raw.github.com/karthikram/ggplot-lecture/master/climate.csv")
 clim$sign <- ifelse(clim$Anomaly10y<0, FALSE, TRUE)
 # or as simple as
 # clim$sign <- clim$Anomaly10y < 0
