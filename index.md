@@ -6,7 +6,7 @@ description: ELAG 2018 Workshop on Interactive Viz
 ---
 
 Instructors: Harrison Dekker and Tim Dennis  
-Setup: <setup-r.html>
+Setup: [Follow these instructions](setup-r.html)
 
 Schedule:
 
