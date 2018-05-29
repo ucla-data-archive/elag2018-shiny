@@ -5,9 +5,8 @@ tagline: Working with R Shiny
 description: ELAG 2018 Workshop on Interactive Viz
 ---
 
-# Interactive data applications with R Shiny
-
 Instructors: Harrison Dekker and Tim Dennis  
+Setup: <setup-r.html>
 
 Schedule:
 
