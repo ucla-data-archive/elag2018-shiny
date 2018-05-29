@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Setup for Workshop
-tagline: Working with R Shiny
-description: ELAG 2018 Workshop on Interactive Viz
 ---
 
 ## R
