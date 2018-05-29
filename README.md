@@ -4,6 +4,8 @@ Instructors: Harrison Dekker and Tim Dennis
 
 Schedule: 
 
+### Morning 10-noon 
+
 1. Getting Setup and Configured (Prior to workshop is preferred)
 2. Shiny Demos 
 1. [R and RStudio](http://moderndive.com/2-getting-started.html) -  
