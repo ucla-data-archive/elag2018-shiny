@@ -2,9 +2,11 @@
 title: "Elag DataViz Basics"
 author: "Tim Dennis"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
-  html_document: 
-    toc: yes
+output:
+  md_document:
+    variant: markdown_github
+    includes:
+      in_header: header.md
 ---
 
 ```{r setup, include=FALSE}
