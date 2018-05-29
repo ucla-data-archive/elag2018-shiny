@@ -12,7 +12,7 @@ analysis. To interact with R, we use
 
 ### Windows
 
-[Video Tutorial](https://www.youtube.com/watch?v=q0PjTAylwoU)
+[Video Tutorial](https://www.youtube.com/watch?v=q0PjTAylwoU)  
 Install R by downloading and running [this .exe
 file](https://cran.r-project.org/bin/windows/base/release.htm) from
 [CRAN](https://cran.r-project.org/index.html). Also, please install the
@@ -24,7 +24,7 @@ may occur later, for example when installing R packages.
 
 ### macOS {#r-macosx}
 
-[Video Tutorial](https://www.youtube.com/watch?v=5-ly3kyxwEg)
+[Video Tutorial](https://www.youtube.com/watch?v=5-ly3kyxwEg)  
 Install R by downloading and running [this .pkg
 file](https://cran.r-project.org/bin/macosx/R-latest.pkg) from
 [CRAN](https://cran.r-project.org/index.html). Also, please install the
