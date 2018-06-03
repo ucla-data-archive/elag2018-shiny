@@ -1,5 +1,5 @@
 ---
-title: "User interface"
+title: "Complex applications"
 author: "Harrison Dekker"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
@@ -12,4 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## User interface 
+## Complex applicatons
+
+
+> This lesson was derived from RStudio [Lesson 5: Use R scripts and data](https://shiny.rstudio.com/tutorial/written-tutorial/lesson5/)
