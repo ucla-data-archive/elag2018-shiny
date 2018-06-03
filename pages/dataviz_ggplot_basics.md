@@ -49,7 +49,7 @@ Terminology:
 Think in terms of variable types
 --------------------------------
 
-<img src="http://moderndive.com/images/coggleviz.png" width="600" />
+<img src="img/coggleviz.png" width="600" />
 
 ### What are some examples of **continuous variables**? **Categorical variables**?
 
