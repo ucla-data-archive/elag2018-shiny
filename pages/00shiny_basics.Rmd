@@ -14,15 +14,15 @@ knitr::opts_chunk$set(cache=TRUE)
 source("../tools/chunk-options.R")
 ```
 ## Getting Started 
-If you haven't done it yet, install Shiny.
+If you haven't done it yet, install the shiny package.
 
 ```{r install, eval=FALSE}
 install.packages("shiny")
 ```
 
-To load our first Shiny application, use the file tab in RStudio to navigate to the folder named LA_circulation and open the file app-1.R. Here's a listing of the code:
+To load our first Shiny application, use the file tab in RStudio to navigate to the folder named LA_circulation and open the file example-1.R. Here's a listing of the code:
 
-```{r app-1, eval=FALSE}
+```{r app, eval=FALSE}
 
 library(shiny)
 
@@ -76,8 +76,8 @@ server <- function(input, output) {
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
     hist(x, breaks = bins, col = "#75AADB", border = "white",
-         xlab = "Waiting time to next eruption (in mins)",
-         main = "Histogram of waiting times")
+         xlab = "Monthly circulation count",
+         main = "Histogram of individual library monthly circulation")
 
     })
 
@@ -88,9 +88,26 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-## #Structure of a Shiny application
-* in the subsequent lessons we'll use the same data, but add widgets and formatting to build a more useful and informative application
+###Structure of a Shiny application
+Notice that there are three components of this application, a user interface object, a server function, a call to the shinyApp function. We'll talk look at how these components work in the following lessons. Let's make sure shiny is working correctly, by clicking "Run App" in the editor window. (RStudio has automatically determined that this script contains a shiny application and has replaced the usual "Run" link with one labelled "Run App".)
 
-Lesson 1
+Once you've determined that Shiny runs properly, you can stop the app by closing the browser window or clicking the *Stop* button. After stopping the application, we'll prepare for the first code challenge by creating a copy of example-1.R, saving it in the empty myapp folder and renaming it app.R. This will be the folder and file we use as we progress through the workshop.
+
+Challenge 1
+Open the app.R file in RStudio and find the server function. Inside the server function, there is a call to a function named hist() which is the base R graphics function for plotting a histogram. See if you can replace the hist function with the ggplot2 geom_histogram function. To make this easier for you, I've provide a code snippet to use, but you'll need to replace each ".." with the correct expressions.
+```
+ggplot(data=circstats, aes(..)) + 
+  geom_histogram(bins = ..) + 
+  labs(title = "..", x ="..")
+```
+Hint: geom_histogram has a simpler approach to specifing the number of using syntax like geom_histogram(bins = x) where x is the number of bins. 
+
+## Summary
+This lesson convered:
+ * Running a simple shiny application in RStudio using the Run App button
+ * Stopping a Shiny application
+ * Making edits to the server object
+ 
+[Next Lesson](pages/01shiny_basics.html)
 
 > This lesson was derived from RStudio [Lesson 1: Welcome to Shiny](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
