@@ -1,4 +1,4 @@
 ---
 layout: page
-title: Interactive DataViz
+title: DataViz and GGPLOT2 Basics
 ---

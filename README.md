@@ -10,7 +10,7 @@ Instructors: Harrison Dekker and Tim Dennis
 * You can link to it off the `index.md` file like so:
   - `[Text](pages/file.html)` use `.html` extension to the above `md` file
 
-If you want to use **rmarkdown** documents in the github flavor of markdown (for say jekyll), use the additional yaml output option `md_document` and `variant`. You can also used a `header.md` file to set up the yaml header, so you specify things like `layout`. 
+If you want to use **rmarkdown** documents in the github flavor of markdown (for say jekyll), use the additional yaml output option `md_document` and `variant`. You can also used a `header.md` file to set up the yaml header, so you can specify things like `layout`. 
 
 ```
 ---
