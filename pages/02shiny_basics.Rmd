@@ -1,0 +1,17 @@
+---
+title: "Widgets"
+author: "Harrison Dekker"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  md_document:
+    variant: markdown_github
+    includes:
+      in_header: header.md
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Widgets
+
+> This lesson was derived from RStudio [Lesson 3: Add control widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/)
