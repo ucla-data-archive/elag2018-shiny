@@ -51,27 +51,7 @@ Think in terms of variable types
 
 <img src="img/coggleviz.png" width="600" />
 
-### What are some examples of **continuous variables**? **Categorical variables**?
-
-Organizing your project space
------------------------------
-
-R gives us a concept of a project and it is good practice to create one
-when you start a project.
-
-1.  Go to `File` &gt; `New project`
-2.  Select `New directory` &gt; `R project`
-3.  Name a new directory on your Desktop `data-viz` click ok
-4.  On the right lower pane add a `New Folder` called `data`
-
-We are ready to start.
-
-Notebooks in R - In-line Viz in dynamic docs
---------------------------------------------
-
-1.  Show diff b/t R scripts and notebooks
-2.  Some basick Rmarkdown
-3.  So how to play vis - interative tinkering
+### What are some examples of **continuous variables**? **Categorical variables**? What is it called in R?
 
 Loading Data in R
 -----------------
@@ -140,21 +120,51 @@ head(diamonds)
 -   If you want to open one of these as a `csv` you can write it out
     using the `write_csv`
 
-### Reading data from the filesystem
-
-#### Download from the web
-
--   To demonstrate this let’s first download a `csv` using the
-    `download.file()`
--   We use the URL to a data file – the full url including the filename
-    for the first argument
--   For the second argument, add the path plus `/` and the file name you
-    want to save as.
+### Reading data from the filesystem and web
 
 ``` r
-#download.file(url, path/filename)
-download.file("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv", 'data/gapminder-FiveYearData.csv')
+la_circ <- read_csv('data/Public_Library_Monthly_Circulation.csv')
 ```
+
+``` output
+Parsed with column specification:
+cols(
+  `Sup Dist` = col_integer(),
+  `Cost Code` = col_integer(),
+  `Library Name` = col_character(),
+  City = col_character(),
+  `Zip Code` = col_integer(),
+  Month = col_character(),
+  Year = col_integer(),
+  `Month-Year` = col_character(),
+  Circulation = col_integer()
+)
+```
+
+``` r
+#la_circ <- read_csv('url')
+```
+
+Let’s see what we have:
+
+``` r
+la_circ %>% 
+  head() %>% 
+  kable(
+    digits=2,
+    caption = "LA County Public Library Monthly Circulation", 
+    booktabs = TRUE
+  )
+```
+
+|  Sup Dist|  Cost Code| Library Name  | City        |  Zip Code| Month    |  Year| Month-Year    |  Circulation|
+|---------:|----------:|:--------------|:------------|---------:|:---------|-----:|:--------------|------------:|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| January  |  2014| January-2014  |         6246|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| February |  2014| February-2014 |         5442|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| March    |  2014| March-2014    |         6168|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| April    |  2014| April-2014    |         6610|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| May      |  2014| May-2014      |         5779|
+|         1|        604| Anthony Quinn | Los Angeles |     90063| June     |  2014| June-2014     |         6257|
 
 First Plots with GGPLOT
 -----------------------
@@ -206,7 +216,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point()
 ```
 
-<img src="fig/08-plot-ggplot2-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+<img src="fig/08-plot-ggplot2-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 **Basic structure**
 
@@ -219,14 +229,14 @@ ggplot(data = <DATA>) +
 ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) + geom_point()
 ```
 
-<img src="fig/08-plot-ggplot2-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/08-plot-ggplot2-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 ``` r
 myplot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width))
 myplot + geom_point()
 ```
 
-<img src="fig/08-plot-ggplot2-unnamed-chunk-2-2.png" style="display: block; margin: auto;" />
+<img src="fig/08-plot-ggplot2-unnamed-chunk-4-2.png" style="display: block; margin: auto;" />
 
 -   Specify the **data and variables** inside the `ggplot` function.
 -   Anything else that goes in here becomes a global setting.

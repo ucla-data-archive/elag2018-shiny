@@ -48,24 +48,8 @@ GOALS: Students should be able to use ggplot2 to generate publication quality gr
 
 <img src="img/coggleviz.png" width="600" />
 
-### What are some examples of **continuous variables**? **Categorical variables**? 
+### What are some examples of **continuous variables**? **Categorical variables**? What is it called in R? 
 
-## Organizing your project space
-
-R gives us a concept of a project and it is good practice to create one when you start a project. 
-
-1. Go to `File` > `New project`
-2. Select `New directory` > `R project`
-3. Name a new directory on your Desktop `data-viz` click ok
-4. On the right lower pane add a `New Folder` called `data`
-
-We are ready to start. 
-
-## Notebooks in R - In-line Viz in dynamic docs
-
-1. Show diff b/t R scripts and notebooks
-2. Some basick Rmarkdown 
-3. So how to play vis - interative tinkering 
 
 ## Loading Data in R 
 
@@ -100,18 +84,40 @@ head(diamonds)
 write_csv(diamonds, 'data/diamonds.csv')
 ```
 
-### Reading data from the filesystem
+### Reading data from the filesystem and web
 
-#### Download from the web
-
-* To demonstrate this let's first download a `csv` using the `download.file()`
-* We use the URL to a data file -- the full url including the filename for the first argument
-* For the second argument, add the path plus `/` and the file name you want to save as.
-
-```{r download-ex, eval=FALSE}
-#download.file(url, path/filename)
-download.file("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv", 'data/gapminder-FiveYearData.csv')
+```{r}
+main_libs <- read_csv('data/Main_Libraries__Branches__and_Bookmobiles__FY_2014_Public_Libraries_Survey__Outlet_Data_.csv')
+#la_circ <- read_csv('url')
 ```
+
+Let's see what we have: 
+```{r}
+main_libs <- main_libs %>% 
+  rename(fscs_id = `FSCS ID`, fscs_id_seq = "FSCS ID_SEQ", library_id = "LIBRARY ID", library_name = "LIBRARY NAME", county_pop = "COUNTY POPULATION", outlet_type = "OUTLET TYPE", sq_feet = "SQ FEET", hours = HOURS, weeks_open = "WEEKS OPEN", metro_status = "METRO STATUS", structure_change = "STRUCTURE CHANGE", name_chage = "NAME CHANGE", address_change = "ADDRESS CHANGE")
+```
+
+```{r}
+main_libs %>% 
+  select(county_pop, sq_feet, hours) %>% 
+  head() %>% 
+  kable(
+    digits=2,
+    caption = "LA County Public Library Monthly Circulation", 
+    booktabs = TRUE
+  )
+```
+
+```{r}
+la_circ %>% 
+  head() %>% 
+  kable(
+    digits=2,
+    caption = "LA County Public Library Monthly Circulation", 
+    booktabs = TRUE
+  )
+```
+
 
 ## First Plots with GGPLOT
 
