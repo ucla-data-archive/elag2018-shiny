@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Interactive DataViz
+title: DataViz and GGPLOT2 Basics
 ---
 
 First part of this notebook based on Karthik Ram’s [GGPLOT2
@@ -17,7 +17,8 @@ graphics.
 -   Think about figure in layers: like you would in Photoshop,
     illustrator or Inkscape.
 
-\#\#DataViz
+DataViz
+-------
 
 -   plotting our data is one of the best was to quickly explore it and
     the various relationships between variables
@@ -48,7 +49,9 @@ Terminology:
 Think in terms of variable types
 --------------------------------
 
-<img src="http://moderndive.com/images/coggleviz.png" width="600" />
+<img src="img/coggleviz.png" width="600" />
+
+### What are some examples of **continuous variables**? **Categorical variables**?
 
 Organizing your project space
 -----------------------------

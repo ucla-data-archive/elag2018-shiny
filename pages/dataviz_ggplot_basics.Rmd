@@ -26,7 +26,7 @@ GOALS: Students should be able to use ggplot2 to generate publication quality gr
 * Grammar of graphics consists of a **dataset**, **coordinate system**, and **geoms** -- the visual representation of data points.
 * Think about figure in layers:  like you would in Photoshop, illustrator or Inkscape.
 
-##DataViz
+## DataViz
 
 * plotting our data is one of the best was to quickly explore it and the various relationships between variables
 * 3 main plotting systems in R: the base [plotting system](http://www.statmethods.net/graphs/), the [lattice package](http://www.statmethods.net/advgraphs/trellis.html), and [ggplot2](http://www.statmethods.net/advgraphs/ggplot2.html)
@@ -46,7 +46,9 @@ GOALS: Students should be able to use ggplot2 to generate publication quality gr
 
 ## Think in terms of variable types
 
-<img src="http://moderndive.com/images/coggleviz.png" width="600" />
+<img src="img/coggleviz.png" width="600" />
+
+### What are some examples of **continuous variables**? **Categorical variables**? 
 
 ## Organizing your project space
 
