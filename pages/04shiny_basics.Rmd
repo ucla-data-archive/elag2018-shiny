@@ -1,0 +1,17 @@
+---
+title: "Reactive expressions"
+author: "Harrison Dekker"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  md_document:
+    variant: markdown_github
+    includes:
+      in_header: header.md
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Reactive expressions
+
+> This lesson was derived from RStudio [Lesson 6: Use reactive expressions](https://shiny.rstudio.com/tutorial/written-tutorial/lesson6/)
