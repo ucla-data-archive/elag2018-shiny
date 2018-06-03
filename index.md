@@ -19,4 +19,4 @@ Schedule:
 
 ## Afternoon 1-4pm
 
-1. Shiny
+1. [Shiny introduction](pages/00shiny_basics.html)
