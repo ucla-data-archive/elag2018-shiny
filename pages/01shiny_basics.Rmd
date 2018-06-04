@@ -119,8 +119,10 @@ Images can be added to panels as well. In the project folder, you'll find a file
 
 `img(src = "rstudio.png", height = 140, width = 400)`
 
-Challenge:
+#### Challenge:
 Remove all the placeholder text and the image we added in this lesson, then add the following. At the bottom fo the sidebar panel, add the image file county_logo.png from the project folder and resize it to a height of 81 and width of 400. At the bottom of the main panel, add the following text: Source: County of Los Angeles Open Data: Public Library Monthly Circulation and make the text "Public Library Monthly Circulation" a link to the following url: https://data.lacounty.gov/Arts-and-Culture/Public-Library-Monthly-Circulation/gf6j-sjun
+
+
 
 [Next Lesson](pages/02shiny_basics.html)
 
