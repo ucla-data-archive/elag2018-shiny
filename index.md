@@ -19,4 +19,6 @@ Schedule:
 
 ## Afternoon 1-4pm
 
-1. [Shiny introduction](pages/00shiny_basics.html)
+1. [Shiny: introduction](pages/00shiny_basics.html)
+2. [Shiny: user interface](pages/01shiny_basics.html)
+3. [Shiny: widgets](pages/02shiny_basics.html)
