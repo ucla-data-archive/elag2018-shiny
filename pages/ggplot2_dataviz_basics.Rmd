@@ -165,20 +165,20 @@ ggplot(data = la_circ, mapping = aes(x = circulation)) +
   geom_histogram(binwidth = 4000, color = "white", fill = "steelblue")
 ```
 
+* Exercie: Play around with the binwidth and bins with your neighbor. What do you find? 
 
 ## Learning Checks
 1. What does changing the number of bins from 30 to 60 tell us about the distribution of temperatures? 
 
 The distribution doesn't change much.
 
-Would you classify the distribution of temperatures as symmetric or skewed?
+1. Would you classify the distribution of circulations stats as symmetric or skewed?
 
 It is skewed right (determined by direction of tail)
 
-What would you guess is the "center" value in this distribution?  
-Why did you make that choice?
+1. What would you guess is the "center" value in this distribution?  Why did you make that choice?
 
-The center is around `r mean(la_circ$circulation, na.rm=TRUE)`&deg;F. By running the `summary()` command, we see that the median is about 3000 less than the mean, typical of a skewed right variable. 
+The center is around `r mean(la_circ$circulation, na.rm=TRUE)`. By running the `summary()` command, we see that the median is about 3000 less than the mean, typical of a skewed right variable. 
 
 ## Barplots 
 
@@ -217,5 +217,18 @@ ggplot(mapping = aes(x = day_month_year, y = circulation, by = library_name, col
   geom_line()
 ```
 
+* But what about labels? Can we change? 
 
+```{r}
+la_circ %>% filter(city == "Los Angeles") %>% 
+ggplot(mapping = aes(x = day_month_year, y = circulation, by = library_name, color = library_name)) +
+  geom_line() +
+  labs(
+    x = "Year",              # x axis title
+    y = "Circulation Counts",   # y axis title
+    title = "Los Angeles City Libraries Circulation Counts by Month and Year",      # main title of figure
+    color = "Library"      # title of legend
+  )  + theme(axis.text.x = element_text(face="bold",
+                           size=10, angle=45))
+```
 

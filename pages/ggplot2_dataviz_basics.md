@@ -45,11 +45,13 @@ For our purposes, we will be limiting consideration to five different types of g
 
 1.  scatterplots (not covering today)
 2.  linegraphs
-3.  boxplots
+3.  boxplots ( not today)
 4.  histograms
 5.  barplots
 
-We will discuss some variations of these plots, but with this basic repertoire in your toolbox you can visualize a wide array of different data variable types. Note that certain plots are only appropriate for categorical/logical variables and others only for quantitative variables. You'll want to quiz yourself often as we go along on which plot makes sense a given a particular problem or data-set.
+-   We will discuss some variations of these plots, but with this basic repertoire in your toolbox you can visualize a wide array of different data variable types.
+-   Note that certain plots are only appropriate for categorical/logical variables and others only for quantitative variables.
+-   You'll want to quiz yourself often as we go along on which plot makes sense a given a particular problem or data-set.
 
 ### Reading data from the filesystem and web
 
@@ -71,10 +73,13 @@ la_circ <- read_csv('data/Public_Library_Monthly_Circulation.csv')
     ## )
 
 ``` r
-#la_circ <- read_csv('url')
+# we can also read from a url
+#la_circ <- read_csv('https://github.com/ucla-data-archive/elag2018-shiny/raw/gh-pages/pages/data/Public_Library_Monthly_Circulation.csv')
 ```
 
-R likes column or varible names to have no spaces in them, e.g. "Sup Dist". If spaces are encoutnered on read, R will will surround the varible names with a tic **\`**. Let's clean this up by renaming the variables. Don't worry about this code bit, just know it renames the column names in our data set.
+-   R likes column or varible names to have no spaces in them, e.g. "Sup Dist".
+-   If spaces are encoutnered on read, R will will surround the varible names with a tic **\`**.
+-   Let's clean this up by renaming the variables. Don't worry about the code below -- it renames the column names in our data set, so they are more usable in R.
 
 ``` r
 la_circ <- la_circ %>% 
@@ -102,7 +107,13 @@ la_circ %>%
 |          1|         604| Anthony Quinn | Los Angeles |      90063| May      |  2014| May-2014      |         5779|
 |          1|         604| Anthony Quinn | Los Angeles |      90063| June     |  2014| June-2014     |         6257|
 
-Each row in this table corresponds to a to the monthly activity for a library in Los Angeles. For each row, we have 9 columns:
+-   We can inspect the data in a few ways:
+-   using `View(la_circ)` will open a tab with the data in RStudio
+-   `glimpse(la_circ)` will output to the console information about the data frame (diminsion, varibles, data types)
+-   `head(la_circ)` and `tail(la_circ)` show us the top and bottom of the dataframe.
+-   `str(la_circ)` an earlier version of `glimpse`
+
+Each row in this table corresponds to a to the monthly activity for a library in Los Angeles county. For each row, we have 9 columns:
 
 1.  **sup\_dist**: Supervisorial District
 2.  **cost\_code**: Internal administrative number.
@@ -117,11 +128,12 @@ Each row in this table corresponds to a to the monthly activity for a library in
 5NG\#3: Histograms
 ------------------
 
-Let's consider the distribution of circulation counts in the `circulation` variable in `la_circ` data frame.
+-   Let's consider the distribution or spread of circulation counts in the `circulation` variable in `la_circ` data frame.
 
 ### Histograms via geom\_histogram
 
-The histogram shows how many elements of a single numerical variable fall in specified *bins*. In this case, these bins may correspond to between 0-10°F, 10-20°F, etc. We produce a histogram of the hour temperatures at all three NYC airports in 2013:
+-   A histogram shows how many elements of a single numerical variable fall in specified *bins*. (by default R will make 30 bins)
+-   We produce a histogram of the `circulation`:
 
 ``` r
 ggplot(data = la_circ, mapping = aes(x = circulation)) +
@@ -180,6 +192,8 @@ ggplot(data = la_circ, mapping = aes(x = circulation)) +
 
 ![](ggplot2_dataviz_basics_files/figure-markdown_github/binwidth_example-1.png)
 
+-   Exercie: Play around with the binwidth and bins with your neighbor. What do you find?
+
 Learning Checks
 ---------------
 
@@ -187,14 +201,13 @@ Learning Checks
 
 The distribution doesn't change much.
 
-Would you classify the distribution of temperatures as symmetric or skewed?
+1.  Would you classify the distribution of circulations stats as symmetric or skewed?
 
 It is skewed right (determined by direction of tail)
 
-What would you guess is the "center" value in this distribution?
-Why did you make that choice?
+1.  What would you guess is the "center" value in this distribution? Why did you make that choice?
 
-The center is around 1.232812910^{4}°F. By running the `summary()` command, we see that the median is about 3000 less than the mean, typical of a skewed right variable.
+The center is around 1.232812910^{4}. By running the `summary()` command, we see that the median is about 3000 less than the mean, typical of a skewed right variable.
 
 Barplots
 --------
@@ -237,3 +250,20 @@ ggplot(mapping = aes(x = day_month_year, y = circulation, by = library_name, col
 ```
 
 ![](ggplot2_dataviz_basics_files/figure-markdown_github/unnamed-chunk-14-1.png)
+
+-   But what about labels? Can we change?
+
+``` r
+la_circ %>% filter(city == "Los Angeles") %>% 
+ggplot(mapping = aes(x = day_month_year, y = circulation, by = library_name, color = library_name)) +
+  geom_line() +
+  labs(
+    x = "Year",              # x axis title
+    y = "Circulation Counts",   # y axis title
+    title = "Los Angeles City Libraries Circulation Counts by Month and Year",      # main title of figure
+    color = "Library"      # title of legend
+  )  + theme(axis.text.x = element_text(face="bold",
+                           size=10, angle=45))
+```
+
+![](ggplot2_dataviz_basics_files/figure-markdown_github/unnamed-chunk-15-1.png)
