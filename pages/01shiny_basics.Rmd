@@ -115,14 +115,13 @@ HTML	 	 |           |Directly passes a character string as HTML code
 I also mentioned second way of adding formatting and that's done by wrapping a string of valid html in the HTML() function. In other words, `strong("This is a a side bar panel")` could also be written as `HTML("<strong>This is a a side bar panel</strong")`. This makes it possible to do more complex html formatting when needed. To practice these methods, add h1 tags to the text we added to the sidebar and main panels using the h1() function in one and the HTML() function in the other.
 
 ### Images
-Images can be added to panels as well. In the examples folder, you'll find a file called rstudio.png. In order to use this in you application, you will need to copy it to a folder called www in your application folder. Create the folder, copy the file and then add the following as the last element in your mainPanel:  
+Images can be added to panels as well. In the project folder, you'll find a file called rstudio.png. In order to use this in you application, you will need to copy it to a folder called www in your application folder. Create the folder, copy the file and then add the following as the last element in your mainPanel:  
 
 `img(src = "rstudio.png", height = 140, width = 400)`
 
 Challenge:
-Remove all the placeholder text and the image we added in this lesson, then add the following. At the bottom fo the sidebar panel, add the image file county_logo.png from the examples folder and resize it to a height of 81 and width of 400. At the bottom of the main panel, add the following text: Source: County of Los Angeles Open Data: Public Library Monthly Circulation and make the text "Public Library Monthly Circulation" a link to the following url: https://data.lacounty.gov/Arts-and-Culture/Public-Library-Monthly-Circulation/gf6j-sjun
+Remove all the placeholder text and the image we added in this lesson, then add the following. At the bottom fo the sidebar panel, add the image file county_logo.png from the project folder and resize it to a height of 81 and width of 400. At the bottom of the main panel, add the following text: Source: County of Los Angeles Open Data: Public Library Monthly Circulation and make the text "Public Library Monthly Circulation" a link to the following url: https://data.lacounty.gov/Arts-and-Culture/Public-Library-Monthly-Circulation/gf6j-sjun
 
 [Next Lesson](pages/02shiny_basics.html)
-
 
 > This lesson was derived from RStudio [Lesson 2: Build a user interface](https://shiny.rstudio.com/tutorial/written-tutorial/lesson2/)
