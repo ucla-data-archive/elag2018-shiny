@@ -15,9 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Widgets
 In it's current state, our application isn't particularly useful because it lumps data from multiple months and libraries together. In this lesson we'll add additional widgets to allow our application to filter the data and display the results for a specific library.   
 
-To accomplish this, we'll add a widget that allows a user to select a specific library. Our dataset actually contains data for approximately 90 libraries, but for convenience, we'll limit choices to a predetermined list of the ten libraries.
+To accomplish this, we'll add a widget that allows a user to select a specific library. Our dataset actually contains data for approximately 90 libraries, but for convenience we'll limit choices to a predetermined list of ten libraries.
 
-You can find the code chunk in the project folder in a file named library_select_list.R. Open it then copy and paste the following code to your application immediately preceding the sliderInput function. Be sure to separate the two function calls with a comma.
+You can find the code chunk below in the project folder in the file library_select_list.R. Open that file then copy and paste the following code into your application immediately preceding the sliderInput function. Be sure to separate the two function calls with a comma.
 
 ```
 
@@ -42,6 +42,7 @@ Before we use this new input to change the plot, let's add some code to tell the
 ```
 textOutput("selected_var")
 ```
+
 Note that "selected_var" isn't the literal text that will be printed. This is because the textOutput function uses this string as an identifer to content that will be created in the server function and assigned to the output object.
 
 We'll add the next piece of code to the server function to *generate* the content for "selected_var". You may paste it immediately after the closing parentheses on the renderPlot function in the server section. There should **not** be a comma separating the two function calls.
