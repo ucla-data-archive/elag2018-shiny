@@ -190,7 +190,7 @@ ggplot(data = la_circ_jan, mapping = aes(x = sup_dist, y = circulation, fill = f
 ```{r}
 ggplot(la_circ, aes(x = month_year, y = circulation, by=city)) + geom_line()
 ```
-* Note
+* The above doesn't render right b/c the `month-year` column doesn't 
 
 ```{r}
 la_circ$day_month_year <- dmy(paste('01', la_circ$month_year))
