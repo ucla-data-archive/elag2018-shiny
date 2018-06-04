@@ -13,9 +13,9 @@ Schedule:
 ## Morning 10-noon
 
 1. [Getting Setup and Configured (Prior to workshop is preferred)](setup-r.html)
-2. Shiny Demos
 1. [R and RStudio](https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)
 3. [DataViz and GGPLOT2 in R](pages/ggplot2_dataviz_basics.html)
+1. Shiny R (time permitting prior to lunch)
 
 ## Afternoon 1-4pm
 
