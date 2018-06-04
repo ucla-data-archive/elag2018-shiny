@@ -82,7 +82,7 @@ output$distPlot <- renderPlot({
 Now, modify your code and see if it works. You'll need to add the reactive expression and modify the appropriate parameters in ggplot.
 
 
-Challenge:
+#### Challenge:
 Create a new app that plots the circulation data for one or more libraries over time. Refer to the line graph you created with ggplot in this morning's lesson and use the Shiny documentation to find a widget that allows you to make multiple selections. 
 
 
