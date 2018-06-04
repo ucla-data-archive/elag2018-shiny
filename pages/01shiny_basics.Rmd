@@ -72,8 +72,8 @@ The function call sliderInput is one of many widget functions available in Shiny
    sidebarLayout(
       sidebarPanel(
          "This is a a side bar panel",
-         sliderInput("bins",
-                     "Number of bins:",
+         sliderInput(inputId = "bins",
+                     label = "Number of bins:",
                      min = 1,
                      max = 50,
                      value = 30)

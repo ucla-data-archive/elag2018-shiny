@@ -21,10 +21,9 @@ You can find the code chunk below in the project folder in the file library_sele
 
 ```
 
-selectInput("library", 
-                    label = "Choose a library:",
-                    choices =  c(
-                       "Lancaster",
+selectInput(inputId = "library", 
+            label = "Choose a library:",
+            choices =  c("Lancaster",
                        "Diamond Bar",
                        "Rowland Heights",
                        "West Covina",
@@ -33,7 +32,8 @@ selectInput("library",
                        "East Los Angeles",
                        "Hacienda Heights",
                        "Rosemead",
-                       "West Hollywood"), selected = "Lancaster")
+                       "West Hollywood"), 
+            selected = "Lancaster")
                        
 ```
 
