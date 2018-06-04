@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Widgets
-In it's current state, our application isn't particularly useful because it lumps data from multiple months and libraries together. In this lesson we'll add additional widgets to allow our application to filter the data and display the results for a specific library particular library.   
+In it's current state, our application isn't particularly useful because it lumps data from multiple months and libraries together. In this lesson we'll add additional widgets to allow our application to filter the data and display the results for a specific library.   
 
 To do this we'll add a widget that allows a user to select a specific library. Our dataset actually contains data for approximately 90 libraries, but to make the code easier to understand for this example, we'll limit choices to a predetermined list of the ten libraries.
 
